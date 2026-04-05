@@ -15,15 +15,23 @@ Ele simula o funcionamento de centrais de atendimento, como hospitais e laborat�
 
 * Formato das senhas:
 
-  * YYMMDD-PPSQ
-    (Exemplo: 240406-SP01)
+  * YYMMDD-PPSQ  
+Onde:
+    - YY: ano
+    - MM: mês
+    - DD: dia
+    - PP: tipo da senha (SP, SG, SE)
+    - SQ: sequência diária
+
+  * Exemplo: 240406-SP01
 
 * Controle de filas por tipo de senha
 
 * Chamada de senhas com prioridade:
 
-  * SP → SE/SG → SP → SE/SG
-
+  * Alternância entre prioridades:
+    SP → (SE ou SG) → SP → (SE ou SG)
+    
 * Painel de atendimento (telão):
 
   * Exibe senha atual em destaque
@@ -40,15 +48,16 @@ Ele simula o funcionamento de centrais de atendimento, como hospitais e laborat�
 
 ### Cliente (Emissão de senha)
 
-![Cliente](./screenshots/AbaCliente.jpeg)
+![Cliente](https://github.com/user-attachments/assets/3cc4a2b2-823a-4b44-a800-cf6f4e84706a)
 
 ### Atendente (Painel / Telão)
 
-![Atendente](./screenshots/AbaAtendente.jpeg)
+![Atendente](https://github.com/user-attachments/assets/adc38c99-0de5-4806-a5ed-cf02093d44dc)
 
 ### Relatório
 
-![Relatório](./screenshots/AbaRelatorio.jpeg)
+![Relatorio](https://github.com/user-attachments/assets/2e69e313-3fc5-4dc6-b107-d48de0dee915)
+
 
 ---
 
@@ -75,8 +84,8 @@ https://github.com/coreybutler/nvm-windows
 Após instalar o NVM, execute no terminal:
 
 ```bash
-nvm install 18
-nvm use 18
+nvm install --lts
+nvm use --lts
 ```
 
 ---
@@ -115,7 +124,7 @@ npm install
 ionic serve
 ```
 
--> O sistema abrirá automaticamente no navegador:
+ O sistema abrirá automaticamente no navegador:
 
 ```
 http://localhost:8100
@@ -139,6 +148,14 @@ http://localhost:8100
 * A numeração das senhas não se repete
 * O sistema simula um ambiente real de atendimento
 * As filas são gerenciadas em tempo real
+
+---
+
+## Limitações atuais
+
+* Não há persistência em banco de dados
+* Não há controle de horário (07h às 17h)
+* Não há cálculo de tempo médio de atendimento
 
 ---
 
