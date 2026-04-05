@@ -7,40 +7,30 @@ Ele simula o funcionamento de centrais de atendimento, como hospitais e laborat�
 
 ## Funcionalidades
 
-* Emissão de senhas:
+- Emissão de senhas:
+  - SG (Senha Geral)
+  - SP (Senha Prioritária)
+  - SE (Senha de Exames)
 
-  * SG (Senha Geral)
-  * SP (Senha Prioritária)
-  * SE (Senha de Exames)
+- Formato das senhas:
+  - YYMMDD-PPSQ  
+    Onde: - YY: ano - MM: mês - DD: dia - PP: tipo da senha (SP, SG, SE) - SQ: sequência diária
 
-* Formato das senhas:
+  - Exemplo: 240406-SP01
 
-  * YYMMDD-PPSQ  
-Onde:
-    - YY: ano
-    - MM: mês
-    - DD: dia
-    - PP: tipo da senha (SP, SG, SE)
-    - SQ: sequência diária
+- Controle de filas por tipo de senha
 
-  * Exemplo: 240406-SP01
-
-* Controle de filas por tipo de senha
-
-* Chamada de senhas com prioridade:
-
-  * Alternância entre prioridades:
+- Chamada de senhas com prioridade:
+  - Alternância entre prioridades:
     SP → (SE ou SG) → SP → (SE ou SG)
-    
-* Painel de atendimento (telão):
 
-  * Exibe senha atual em destaque
-  * Mostra as últimas 5 senhas chamadas
+- Painel de atendimento (telão):
+  - Exibe senha atual em destaque
+  - Mostra as últimas 5 senhas chamadas
 
-* Relatório simples:
-
-  * Total de senhas emitidas
-  * Quantidade por tipo
+- Relatório simples:
+  - Total de senhas emitidas
+  - Quantidade por tipo
 
 ---
 
@@ -58,15 +48,14 @@ Onde:
 
 ![Relatorio](https://github.com/user-attachments/assets/2e69e313-3fc5-4dc6-b107-d48de0dee915)
 
-
 ---
 
 ## Tecnologias utilizadas
 
-* Ionic
-* Angular
-* TypeScript
-* Node.js
+- Ionic
+- Angular
+- TypeScript
+- Node.js
 
 ---
 
@@ -124,7 +113,7 @@ npm install
 ionic serve
 ```
 
- O sistema abrirá automaticamente no navegador:
+O sistema abrirá automaticamente no navegador:
 
 ```
 http://localhost:8100
@@ -145,21 +134,21 @@ http://localhost:8100
 
 ## Observações
 
-* A numeração das senhas não se repete
-* O sistema simula um ambiente real de atendimento
-* As filas são gerenciadas em tempo real
+- A numeração das senhas não se repete
+- O sistema simula um ambiente real de atendimento
+- As filas são gerenciadas em tempo real
 
 ---
 
 ## Limitações atuais
 
-* Não há persistência em banco de dados
-* Não há controle de horário (07h às 17h)
-* Não há cálculo de tempo médio de atendimento
+- Não há persistência em banco de dados
+- Não há controle de horário (07h às 17h)
+- Não há cálculo de tempo médio de atendimento
 
 ---
 
 ## Autor
 
-Desenvolvido por Willian Gabriel
-Curso de Análise e Desenvolvimento de Sistemas
+- Desenvolvido por Willian Gabriel
+- Curso de Análise e Desenvolvimento de Sistemas
