@@ -14,19 +14,47 @@
   <ion-card>
     <ion-card-header>
       <ion-input
+        style="color: #f3f3f3; font-size: large"
         readonly="true"
         label="Senha: "
         value="{{ senhasService.inputNovaSenha }}"
       ></ion-input>
     </ion-card-header>
     <ion-card-content>
-      <ion-button expand="block" (click)="senhasService.novaSenha('SG')"
+      <ion-button
+        expand="block"
+        style="
+          width: 900px;
+          height: 70px;
+          margin: 0 auto;
+          display: block;
+          margin-bottom: 20px;
+        "
+        (click)="senhasService.novaSenha('SG')"
         >Senha Geral</ion-button
       >
-      <ion-button expand="block" (click)="senhasService.novaSenha('SP')"
+      <ion-button
+        expand="block"
+        style="
+          width: 900px;
+          height: 70px;
+          margin: 0 auto;
+          display: block;
+          margin-bottom: 20px;
+        "
+        (click)="senhasService.novaSenha('SP')"
         >Senha Prioritária
       </ion-button>
-      <ion-button expand="block" (click)="senhasService.novaSenha('SE')"
+      <ion-button
+        expand="block"
+        style="
+          width: 900px;
+          height: 70px;
+          margin: 0 auto;
+          display: block;
+          margin-bottom: 20px;
+        "
+        (click)="senhasService.novaSenha('SE')"
         >Senha Exame</ion-button
       >
     </ion-card-content>
