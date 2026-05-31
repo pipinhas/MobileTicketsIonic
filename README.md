@@ -53,15 +53,18 @@ Ele simula o funcionamento de centrais de atendimento, como hospitais e laborat�
 
 ### Cliente (Emissão de senha)
 
-![Cliente](https://github.com/user-attachments/assets/3cc4a2b2-823a-4b44-a800-cf6f4e84706a)
+![Cliente](<img width="1920" height="916" alt="{2B0B2820-49CC-4F88-AF11-9358D3BB7B6F}" src="https://github.com/user-attachments/assets/d53081e4-4a5b-4630-8f53-cc988363c813" />
+)
 
 ### Atendente (Painel / Telão)
 
-![Atendente](https://github.com/user-attachments/assets/adc38c99-0de5-4806-a5ed-cf02093d44dc)
+![Atendente](<img width="1920" height="919" alt="{BBA7BC22-5C89-46CD-8FB8-5BCEF9C5D930}" src="https://github.com/user-attachments/assets/f3560599-eade-46d6-90b8-4554e7979847" />
+)
 
 ### Relatório
 
-![Relatorio](https://github.com/user-attachments/assets/2e69e313-3fc5-4dc6-b107-d48de0dee915)
+![Relatorio](<img width="1920" height="925" alt="{D9EFE2EF-88BD-4F3D-81A6-FD29F8658628}" src="https://github.com/user-attachments/assets/f316f235-432a-4443-be26-b1d89ad58929" />
+)
 
 ---
 
