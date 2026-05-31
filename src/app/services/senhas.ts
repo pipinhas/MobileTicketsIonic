@@ -1,6 +1,1 @@
-import { Injectable } from '@angular/core';
-
-@Injectable({
-  providedIn: 'root',
-})
-export class Senhas {}
+export { Senhas } from './senhas.service';

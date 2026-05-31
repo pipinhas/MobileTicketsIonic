@@ -1,27 +1,114 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title> Relatório </ion-title>
+    <ion-title>Relatorio</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="ion-padding">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Relatório</ion-title>
+      <ion-title size="large">Relatorio</ion-title>
     </ion-toolbar>
   </ion-header>
 
+  <ion-segment [(ngModel)]="senhasService.periodoRelatorio">
+    <ion-segment-button value="diario">
+      <ion-label>Diario</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="mensal">
+      <ion-label>Mensal</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
   <ion-card>
+    <ion-card-header>
+      <ion-card-title>Resumo</ion-card-title>
+    </ion-card-header>
+
     <ion-card-content>
       <ion-list>
-        <ion-label>Relatório</ion-label>
-        <ion-item>Senhas emitidas: {{ senhasService.senhasTotal }}</ion-item>
-        <ion-item>Senhas Geral: {{ senhasService.senhasGeral }}</ion-item>
-        <ion-item>Senhas Prioritária: {{ senhasService.senhasPrior }}</ion-item>
-        <ion-item>Senhas Exame: {{ senhasService.senhasExame }}</ion-item>
+        <ion-item>
+          <ion-label>Senhas emitidas</ion-label>
+          <ion-note slot="end">{{ senhasService.relatorio.emitidasTotal }}</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>Senhas atendidas</ion-label>
+          <ion-note slot="end">{{ senhasService.relatorio.atendidasTotal }}</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>Senhas descartadas</ion-label>
+          <ion-note slot="end">{{ senhasService.relatorio.descartadasTotal }}</ion-note>
+        </ion-item>
       </ion-list>
     </ion-card-content>
   </ion-card>
 
-  <!-- <app-explore-container name="Tab 3 page"></app-explore-container> -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Por tipo</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>SG emitidas / atendidas / TM</ion-label>
+          <ion-note slot="end">
+            {{ senhasService.relatorio.emitidasPorTipo.SG }} /
+            {{ senhasService.relatorio.atendidasPorTipo.SG }} /
+            {{ senhasService.relatorio.tempoMedioPorTipo.SG }} min
+          </ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>SP emitidas / atendidas / TM</ion-label>
+          <ion-note slot="end">
+            {{ senhasService.relatorio.emitidasPorTipo.SP }} /
+            {{ senhasService.relatorio.atendidasPorTipo.SP }} /
+            {{ senhasService.relatorio.tempoMedioPorTipo.SP }} min
+          </ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>SE emitidas / atendidas / TM</ion-label>
+          <ion-note slot="end">
+            {{ senhasService.relatorio.emitidasPorTipo.SE }} /
+            {{ senhasService.relatorio.atendidasPorTipo.SE }} /
+            {{ senhasService.relatorio.tempoMedioPorTipo.SE }} min
+          </ion-note>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Detalhamento</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let senha of senhasService.registrosRelatorio">
+          <ion-label>
+            <h2>{{ senha.numero }} - {{ senha.status }}</h2>
+            <p>Tipo: {{ senha.tipo }}</p>
+            <p>Emissao: {{ senhasService.formatarData(senha.dataEmissao) }}</p>
+            <p>Atendimento: {{ senhasService.formatarData(senha.dataAtendimento) }}</p>
+            <p>Guiche: {{ senha.guiche || '-' }}</p>
+            <p>TM: {{ senha.tempoAtendimentoMin || '-' }} min</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item *ngIf="senhasService.registrosRelatorio.length === 0">
+          Nenhuma senha no periodo selecionado
+        </ion-item>
+      </ion-list>
+
+      <ion-button
+        expand="block"
+        color="danger"
+        fill="outline"
+        (click)="senhasService.limparDados()"
+      >
+        Limpar dados locais
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

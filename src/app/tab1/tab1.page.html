@@ -1,10 +1,10 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title> Cliente</ion-title>
+    <ion-title>Cliente</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="ion-padding">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Cliente</ion-title>
@@ -13,52 +13,60 @@
 
   <ion-card>
     <ion-card-header>
-      <ion-input
-        style="color: #f3f3f3; font-size: large"
-        readonly="true"
-        label="Senha: "
-        value="{{ senhasService.inputNovaSenha }}"
-      ></ion-input>
+      <ion-card-title>Emitir senha</ion-card-title>
+      <ion-card-subtitle>
+        {{ senhasService.statusExpediente }}
+      </ion-card-subtitle>
     </ion-card-header>
+
     <ion-card-content>
       <ion-button
         expand="block"
-        style="
-          width: 900px;
-          height: 70px;
-          margin: 0 auto;
-          display: block;
-          margin-bottom: 20px;
-        "
-        (click)="senhasService.novaSenha('SG')"
-        >Senha Geral</ion-button
+        fill="outline"
+        color="medium"
+        (click)="senhasService.alternarExpedienteManual()"
       >
-      <ion-button
-        expand="block"
-        style="
-          width: 900px;
-          height: 70px;
-          margin: 0 auto;
-          display: block;
-          margin-bottom: 20px;
-        "
-        (click)="senhasService.novaSenha('SP')"
-        >Senha Prioritária
+        {{
+          senhasService.expedienteManualAtivo
+            ? 'Encerrar expediente manual'
+            : 'Iniciar expediente'
+        }}
       </ion-button>
+
+      <ion-item>
+        <ion-label>Senha</ion-label>
+        <ion-note slot="end">
+          {{ senhasService.inputNovaSenha || '---' }}
+        </ion-note>
+      </ion-item>
+
       <ion-button
         expand="block"
-        style="
-          width: 900px;
-          height: 70px;
-          margin: 0 auto;
-          display: block;
-          margin-bottom: 20px;
-        "
-        (click)="senhasService.novaSenha('SE')"
-        >Senha Exame</ion-button
+        [disabled]="!senhasService.expedienteAberto"
+        (click)="senhasService.novaSenha('SG')"
       >
+        Senha Geral
+      </ion-button>
+
+      <ion-button
+        expand="block"
+        [disabled]="!senhasService.expedienteAberto"
+        (click)="senhasService.novaSenha('SP')"
+      >
+        Senha Prioritaria
+      </ion-button>
+
+      <ion-button
+        expand="block"
+        [disabled]="!senhasService.expedienteAberto"
+        (click)="senhasService.novaSenha('SE')"
+      >
+        Senha Exame
+      </ion-button>
+
+      <ion-text color="medium">
+        <p>{{ senhasService.mensagemSistema }}</p>
+      </ion-text>
     </ion-card-content>
   </ion-card>
-
-  <!-- <app-explore-container name="Tab 1 page"></app-explore-container> -->
 </ion-content>

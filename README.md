@@ -20,17 +20,32 @@ Ele simula o funcionamento de centrais de atendimento, como hospitais e laborat�
 
 - Controle de filas por tipo de senha
 
+- Controle de expediente:
+  - Horário padrão das 07h às 17h
+  - Botão para iniciar expediente manualmente
+  - Descarte das senhas pendentes após o fim do expediente
+
 - Chamada de senhas com prioridade:
   - Alternância entre prioridades:
-    SP → (SE ou SG) → SP → (SE ou SG)
+    SP -> (SE ou SG) -> SP -> (SE ou SG)
 
 - Painel de atendimento (telão):
   - Exibe senha atual em destaque
   - Mostra as últimas 5 senhas chamadas
+  - Registra o guichê responsável pelo atendimento
 
-- Relatório simples:
+- Relatório:
   - Total de senhas emitidas
-  - Quantidade por tipo
+  - Total de senhas atendidas
+  - Total de senhas descartadas
+  - Quantidade por tipo de senha
+  - Relatório diário e mensal
+  - Detalhamento das senhas com data de emissão, atendimento, guichê e status
+  - Cálculo do tempo médio de atendimento
+
+- Persistência local:
+  - Os dados ficam salvos no navegador
+  - O armazenamento é feito com localStorage
 
 ---
 
@@ -123,28 +138,37 @@ http://localhost:8100
 
 ## Como o sistema funciona
 
-1. O cliente gera uma senha (SG, SP ou SE)
-2. A senha entra na fila correspondente
-3. O atendente chama a próxima senha
-4. O sistema respeita a prioridade definida
-5. A senha aparece no painel (telão)
-6. As últimas 5 chamadas ficam registradas
+1. O expediente precisa estar aberto para gerar ou chamar senhas
+2. O cliente gera uma senha (SG, SP ou SE)
+3. A senha entra na fila correspondente
+4. O atendente informa o guichê
+5. O atendente chama a próxima senha
+6. O sistema respeita a prioridade definida
+7. A senha aparece no painel (telão)
+8. As últimas 5 chamadas ficam registradas
+9. O relatório mostra as senhas emitidas, atendidas e descartadas
 
 ---
 
 ## Observações
 
-- A numeração das senhas não se repete
+- A numeração das senhas não se repete no mesmo dia e no mesmo tipo
 - O sistema simula um ambiente real de atendimento
 - As filas são gerenciadas em tempo real
+- O expediente padrão funciona das 07h às 17h
+- O botão de iniciar expediente permite usar o sistema fora do horário padrão
+- Existe uma simulação de 5% de senhas descartadas quando o cliente não aparece
+- O tempo médio de atendimento é simulado conforme o tipo da senha
 
 ---
 
 ## Limitações atuais
 
 - Não há persistência em banco de dados
-- Não há controle de horário (07h às 17h)
-- Não há cálculo de tempo médio de atendimento
+- Os dados ficam salvos apenas no navegador
+- Não há backend conectado ao sistema
+- Não há login de usuário
+- O tempo de atendimento é simulado, não cronometrado em tempo real
 
 ---
 
