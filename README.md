@@ -53,18 +53,15 @@ Ele simula o funcionamento de centrais de atendimento, como hospitais e laborat�
 
 ### Cliente (Emissão de senha)
 
-![Cliente](<img width="1920" height="916" alt="{2B0B2820-49CC-4F88-AF11-9358D3BB7B6F}" src="https://github.com/user-attachments/assets/d53081e4-4a5b-4630-8f53-cc988363c813" />
-)
+![Cliente](https://github.com/pipinhas/MobileTicketsIonic/blob/main/screenshots/AbaCliente.png)
 
 ### Atendente (Painel / Telão)
 
-![Atendente](<img width="1920" height="919" alt="{BBA7BC22-5C89-46CD-8FB8-5BCEF9C5D930}" src="https://github.com/user-attachments/assets/f3560599-eade-46d6-90b8-4554e7979847" />
-)
+![Atendente](https://github.com/pipinhas/MobileTicketsIonic/blob/main/screenshots/AbaAtendente.png)
 
 ### Relatório
 
-![Relatorio](<img width="1920" height="925" alt="{D9EFE2EF-88BD-4F3D-81A6-FD29F8658628}" src="https://github.com/user-attachments/assets/f316f235-432a-4443-be26-b1d89ad58929" />
-)
+![Relatorio](https://github.com/pipinhas/MobileTicketsIonic/blob/main/screenshots/AbaRelatorio.png)
 
 ---
 
