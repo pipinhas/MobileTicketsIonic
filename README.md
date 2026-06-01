@@ -53,17 +53,17 @@ Ele simula o funcionamento de centrais de atendimento, como hospitais e laborat�
 
 ### Cliente (Emissão de senha)
 
-![Cliente]<img width="1920" height="920" alt="AbaCliente" src="https://github.com/user-attachments/assets/785731f7-3630-4a23-8672-beaaae2f8901" />
+<img width="1920" height="920" alt="AbaCliente" src="https://github.com/user-attachments/assets/785731f7-3630-4a23-8672-beaaae2f8901" />
 
 
 ### Atendente (Painel / Telão)
 
-![Atendente]<img width="1920" height="915" alt="AbaAtendente" src="https://github.com/user-attachments/assets/1931feda-2cbd-4394-b248-f98dea0c0109" />
+<img width="1920" height="915" alt="AbaAtendente" src="https://github.com/user-attachments/assets/1931feda-2cbd-4394-b248-f98dea0c0109" />
 
 
 ### Relatório
 
-![Relatorio]<img width="1920" height="923" alt="AbaRelatorio" src="https://github.com/user-attachments/assets/81cf5374-0899-4a37-a19a-baf59fbc17bc" />
+<img width="1920" height="923" alt="AbaRelatorio" src="https://github.com/user-attachments/assets/81cf5374-0899-4a37-a19a-baf59fbc17bc" />
 
 
 ---
